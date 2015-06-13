@@ -22,14 +22,14 @@ class Welcome extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->helper("form");
-        $this->load->model("video_modelo");
-        $this->load->model("salas/evento_modelo");
+        $this->load->model('Video_model');
+        $this->load->model("Evento_modelo");
     }
     
 	public function index()
 	{
-        $data['top_five_videos']=$this->video_modelo->get_top_five_videos();
-        $data['top_five_apartados']=$this->evento_modelo->get_top_five_eventos();
+        $data['top_five_videos']=$this->Video_model->get_top_five_videos();
+        $data['top_five_apartados']=$this->Evento_modelo->get_top_five_eventos();
         $data['bienvenida']=$this->load->view('bienvenida','',true);
         $data['apartados']=$this->load->view('salas/apartados_recientes',$data,true);
         $this->load->view('header');
