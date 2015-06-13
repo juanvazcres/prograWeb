@@ -25,6 +25,7 @@ class Welcome extends CI_Controller {
         $this->load->model("video_modelo");
         $this->load->model("salas/evento_modelo");
     }
+    
 	public function index()
 	{
         $data['top_five_videos']=$this->video_modelo->get_top_five_videos();
@@ -36,6 +37,4 @@ class Welcome extends CI_Controller {
         $this->load->view('welcome_message',$data);
         $this->load->view('footer');
 	}
-    
-  
 }

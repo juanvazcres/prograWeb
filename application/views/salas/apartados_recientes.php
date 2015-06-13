@@ -13,9 +13,10 @@
                   foreach($top_five_apartados->result() as $apartados):
                 ?>
               <li>
-              	<figure><strong><?php echo $apartados->fechaInicio;?></strong></figure>
-                <h3><a href="#"><?php echo $apartados->nombre;?></a></h3>
-                <?php echo $apartados->horaInicio;?> <a href="#">...</a>
+              	<figure><strong><?php echo date('d',strtotime($apartados->fechaInicio));?></strong><?php echo date('M',strtotime($apartados->fechaInicio));?></figure>
+                <h3><a><?php echo $apartados->nombre;?></a></h3>
+                <p>Hora Inicio:<?php echo $apartados->horaInicio;?><br/>Hora final: <?php echo $apartados->horaFin;?></p>
+                  
               </li>
                 <?php
                   endforeach;
