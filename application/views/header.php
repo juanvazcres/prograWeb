@@ -26,15 +26,16 @@
   <!-- header -->
   <header>
     <div class="container">
-    	<h1><a href="index.html">Design Company</a></h1>
+        
+    	<h1><a href="<?php echo base_url()?>">Mediateca</a></h1>
       <nav>
         <ul>
-        	<li><a href="index.html" class="current">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contacts.html">Contact</a></li>
-          <li><a href="sitemap.html">Sitemap</a></li>
+            <li><a href="<?php echo base_url()?>">Home</a></li>
+            <li><a href="#">Galleria</a></li>
+            <!--?php echo $is_logged ? base_url().'logout' : base_url().'login';?--> 
+            <li><a href="<?php echo $is_logged ? base_url().'index.php/login/logout' : base_url().'index.php/login';?>"><?php echo $is_logged ? 'Salir' : 'Ingresar';?></a></li>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="#">Acerca de</a></li>
         </ul>
       </nav>
     </div>

@@ -32,7 +32,12 @@ class Welcome extends CI_Controller {
         $data['top_five_apartados']=$this->Evento_modelo->get_top_five_eventos();
         $data['bienvenida']=$this->load->view('bienvenida','',true);
         $data['apartados']=$this->load->view('salas/apartados_recientes',$data,true);
-        $this->load->view('header');
+        
+        $data['session_rfc']=$this->session->userdata('rfc');
+        $data['is_logged']=$this->session->userdata('is_logged');
+        
+        //echo $data['session_rfc'];
+        $this->load->view('header',$data);
 		$this->load->view('slider',$data);
         $this->load->view('welcome_message',$data);
         $this->load->view('footer');
