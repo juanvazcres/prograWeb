@@ -3,7 +3,7 @@
       <div class="inside">
         <div class="wrapper">
            
-            <?php var_dump($session_rfc);
+            <?php 
                 echo $apartados;
                 echo $bienvenida;
             ?>
