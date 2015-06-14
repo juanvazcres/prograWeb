@@ -24,7 +24,6 @@ class Welcome extends CI_Controller {
         $this->load->helper("form");
         $this->load->model('Video_model');
         $this->load->model("Evento_modelo");
-        $this->load->library("JuanitoMenu");
     }
     
 	public function index()
@@ -36,25 +35,7 @@ class Welcome extends CI_Controller {
         
         $data['session_rfc']=$this->session->userdata('rfc');
         $data['is_logged']=$this->session->userdata('is_logged');
-        $menu_arr=array();
-        if($data['is_logged']){
-        $menu_arr=array(
-                        "Inicio" => base_url(),
-                        "Galeria" => "#",
-                        "Logout" =>base_url().'index.php/login/logout',
-                        "Ayuda" => "#",
-                        "Acerca de" => '#'
-                        );
-        }else{
-        $menu_arr=array(
-                        "Inicio" => base_url(),
-                        "Galeria" => "#",
-                        "Login" =>base_url().'index.php/login',
-                        "Ayuda" => "#",
-                        "Acerca de" => '#'
-                        );
-    }
-        $data['JuanitoMenu'] =$this->juanitomenu->construir_menu($menu_arr);
+        
         //echo $data['session_rfc'];
         $this->load->view('header',$data);
 		$this->load->view('slider',$data);

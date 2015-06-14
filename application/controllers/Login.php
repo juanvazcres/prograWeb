@@ -7,29 +7,14 @@ class Login extends CI_Controller {
         $this->load->library(array('session','form_validation'));
 		$this->load->helper(array('url','form'));
         $this->load->model("login_modelo");
-        $this->load->library("JuanitoMenu");
-        
     }
 
     public function index(){
-        $data_menu['JuanitoMenu']=$this->generarMenu();
-        $data['header']=$this->load->view('header',$data_menu,true);
+        $data['header']=$this->load->view('header','',true);
         $data['footer']=$this->load->view('footer','',true);
+        
         $this->load->view('view_login',$data);
     }
-    
-    
-    private function generarMenu(){
-    $menu_arr=array(
-                        "Inicio" => base_url(),
-                        "Galeria" => "#",
-                        "Ayuda" => "#",
-                        "Acerca de" => '#'
-                        );
-    
-        return $this->juanitomenu->construir_menu($menu_arr);
-    }
-    
     
     function processLogin(){
         $data = array(
