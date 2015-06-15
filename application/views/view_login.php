@@ -31,6 +31,7 @@
     <?php
         echo form_close();
     ?>
+                <a href="<?php echo base_url()?>index.php/Login/registrarse">Registrarse</a>
        </div>
         </div>
       </div>

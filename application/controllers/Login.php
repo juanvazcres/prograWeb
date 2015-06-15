@@ -7,6 +7,8 @@ class Login extends CI_Controller {
         $this->load->library(array('session','form_validation'));
 		$this->load->helper(array('url','form'));
         $this->load->model("login_modelo");
+        $this->load->model("Carrera_model");
+        $this->load->model("Usuario_model");
         $this->load->library("JuanitoMenu");
     }
 
@@ -61,6 +63,32 @@ class Login extends CI_Controller {
     function logout(){
         $this->session->sess_destroy();
         redirect(base_url(),'refresh');
+    }
+    
+    
+    
+    function registrarse(){
+        $data["carreras"] = $this->Carrera_model->get_carreras();
+        $data['is_logged']=$this->session->userdata('is_logged');
+        $data['JuanitoMenu'] =$this->juanitomenu->get_menu_is_logged($data['is_logged']);
+        $data['header']=$this->load->view('header',$data,true);
+        $data['footer']=$this->load->view('footer','',true);
+        $this->load->view('users/register_user_form',$data);
+    }
+    
+    function solicitudRegistro(){
+        $usuario =array(                    
+                      'nombre'=>$this->input->post('nombre'),
+                      'ap_paterno'=>$this->input->post('apellido_paterno'),
+                      'ap_materno'=>$this->input->post('apellido_materno'),
+                      'email'=>$this->input->post('email'),
+                      'telefono'=>$this->input->post('telefono'),
+                      'rfc'=>$this->input->post('rfc'),
+                      'pass'=>md5($this->input->post('password')),
+                      'Carrera_idCarrera'=>$this->input->post('carrera')
+                    );
+        $this->Usuario_model->enviar_solicitud($usuario);
+        redirect(base_url(),'refresh');                                                 
     }
 }
 ?>
