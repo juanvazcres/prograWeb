@@ -20,9 +20,8 @@ class Item_modelo extends CI_Model {
         else{return false;}
     }
 
-    public funtion get_items_by_title($title){
-
-        $this->db->where('TipoItem_idTipoItem',$type);
+    public function get_items_by_title($title){
+        $this->db->where('titulo',$title);
         $query = $this->db->get('Item');
         if($query->num_rows()>0){return $query;}
         else{return false;}

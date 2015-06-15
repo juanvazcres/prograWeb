@@ -6,12 +6,11 @@
 
 
             <!--seccion de galería-->
+            <?php foreach($all_videos->result() as $video):?>
             <div class="row">
-                <?php
-                    foreach($->result() as $video):?>
-                   <div class="col-md-3">
+                <div class="col-md-3">
                     <a href="#" class="thumbnail">
-                    <img src="<?php echo base_url()?>/images/thumb1.jpg" alt="...">
+                    <img src="" alt="...">
                     </a>
                 </div>
                 <div class="col-md-9">
@@ -25,6 +24,7 @@
                     jdhaskjdh askjdhsa kjdh sakjdh askjhd askjd.</p>
                 </div>
             </div>
+            <?php endforeach; ?>
             <!--seccion de galería-->
 
 
