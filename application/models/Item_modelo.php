@@ -38,5 +38,11 @@ class Item_modelo extends CI_Model {
         if($query->num_rows()>0){return $query;}
         else{return false;}
     }
+
+    public function get(){
+        $query = $this->db->get('Item');
+        if($query->num_rows()>0){return $query;}
+        else{return false;}
+    }
 }
 ?>
