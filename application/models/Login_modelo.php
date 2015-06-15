@@ -12,7 +12,7 @@ class Login_modelo extends CI_Model{
     public function login_user($rfc,$pass)
 	{
         $this -> db -> select('idUsuario, rfc, pass, Rol_idRol, Status_idStatus');
-        $this -> db -> from('usuario');
+        $this -> db -> from('Usuario');
         $this -> db -> where('rfc', $rfc);
         $this -> db -> where('pass', $pass);
         $this -> db -> limit(1);
