@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 14, 2015 at 06:53 PM
+-- Generation Time: Jun 15, 2015 at 01:55 AM
 -- Server version: 5.5.43-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.9
 
@@ -98,20 +98,23 @@ INSERT INTO `Evento` (`idEvento`, `nombre`, `fechaInicio`, `fechaFin`, `horaInic
 CREATE TABLE IF NOT EXISTS `Item` (
   `idItem` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(45) NOT NULL,
-  `url` varchar(45) NOT NULL,
-  `descripcion` varchar(45) NOT NULL,
-  `imagen` varchar(45) NOT NULL,
+  `url` varchar(300) NOT NULL,
+  `descripcion` varchar(800) NOT NULL,
+  `imagen` varchar(300) NOT NULL,
   `TipoItem_idTipoItem` int(11) NOT NULL,
   PRIMARY KEY (`idItem`),
   KEY `fk_Item_TipoItem1_idx` (`TipoItem_idTipoItem`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `Item`
 --
 
 INSERT INTO `Item` (`idItem`, `titulo`, `url`, `descripcion`, `imagen`, `TipoItem_idTipoItem`) VALUES
-(1, 'CodeIgniter - Introducción', 'https://www.youtube.com/watch?v=w1Cn-CiL-E8', 'Curo intruductorio para aprender a usar el fr', 'https://images.duckduckgo.com/iu/?u=http%3A%2', 1);
+(1, 'CodeIgniter - Introducción', 'https://www.youtube.com/watch?v=w1Cn-CiL-E8', 'Curso intruductorio para aprender a usar el framework Codeigniter para desarrollo web.', 'http://www.cetinakat.info/wp-content/uploads/2011/10/CodeIgniter_1680x10501.jpg', 1),
+(2, ' LA HISTORIA DE LA MATEMATICAS', 'https://www.youtube.com/watch?v=lEU1TGOV4QI', 'Las matemáticas empiezan con el conteo. Sin embargo, no es razonable sugerir que el conteo de la antigüedad era matemáticas. Se puede decir que las matemáticas empiezan solamente cuando se empezó a llevar un registro de ese conteo y, por ello, se tuvo alguna representación de los números.', 'http://tantrasurbanos.com/wp-content/uploads/2013/10/Historiamaths.jpg', 1),
+(3, ' Historia prohibida de la humanidad', 'https://www.youtube.com/watch?v=xW0pY5j2xvA', 'Documental muy interesante sobre todos los hallazgos de arqueología, ingeniería y geología, ocultados por la ciencia convencional por no adecuarse al paradigma científico actual.', 'http://i.ytimg.com/vi/vLKdz0oI__Q/0.jpg', 1),
+(4, ' Documental - Historia Oculta de Saddam Husse', 'https://www.youtube.com/watch?v=kcfso0pJpYM', 'Lideres mundiales\nDictadores del mundo\nDictadores de la historia\nDerrocamiento de Saddam Hussein.\n', 'http://i3.ytimg.com/vi/kcfso0pJpYM/hqdefault.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -238,14 +241,15 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   KEY `fk_Usuario_Carrera_idx` (`Carrera_idCarrera`),
   KEY `fk_Usuario_Rol1_idx` (`Rol_idRol`),
   KEY `fk_Usuario_Status1_idx` (`Status_idStatus`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `Usuario`
 --
 
 INSERT INTO `Usuario` (`idUsuario`, `nombre`, `ap_paterno`, `ap_materno`, `email`, `telefono`, `rfc`, `pass`, `Carrera_idCarrera`, `Rol_idRol`, `Status_idStatus`) VALUES
-(1, 'Juan', 'Vazquez', 'Cres', 'juan@mail.com', '1234567890', 'VACJ930130HVZ', 'e10adc3949ba59abbe56e057f20f883e', 1, 1, 1);
+(1, 'Juan', 'Vazquez', 'Cres', 'juan@mail.com', '1234567890', 'VACJ930130HVZ', 'e10adc3949ba59abbe56e057f20f883e', 1, 1, 1),
+(2, 'Juanito', 'Vaz', 'Cres', 'jusnito@mandarinacorp.com', '12345612', 'ridm8611101m5', 'c4ca4238a0b923820dcc509a6f75849b', 1, 1, 2);
 
 -- --------------------------------------------------------
 

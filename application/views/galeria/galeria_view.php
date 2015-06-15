@@ -5,15 +5,16 @@
         <div class="wrapper">
 
             <!--seccion de galería-->
-            <?php foreach($all_videos->result() as $video):?>
+            <?php if($all_videos):
+                foreach($all_videos->result() as $video):?>
             <div class="row">
                 <div class="col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="<?php //echo $video->idItem?>" class="thumbnail">
                     <img src="<?php echo $video->imagen?>" alt="...">
                     </a>
                 </div>
                 <div class="col-md-9">
-                    <a href="#" class="thumbnail">
+                    <a href="<?php //echo $video->idItem?>" class="thumbnail">
                     <h2>
                         <?php echo $video->titulo?>
                     </h2>
@@ -21,7 +22,8 @@
                     <p><?php echo $video->descripcion?></p>
                 </div>
             </div>
-            <?php endforeach; ?>
+            <?php endforeach;
+                  endif;?>
             <!--seccion de galería-->
 
 

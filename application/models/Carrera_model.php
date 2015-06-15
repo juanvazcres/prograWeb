@@ -7,7 +7,7 @@ class Carrera_model extends CI_Model {
     }
     
     public function get_carreras(){
-        $carreras = $this->db->get("carrera");
+        $carreras = $this->db->get("Carrera");
              if($carreras->num_rows()>0){return $carreras ;}
         else{return false;}
     }

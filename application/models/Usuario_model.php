@@ -18,7 +18,7 @@ class Usuario_model extends CI_Model {
                       'Carrera_idCarrera'=>$data['Carrera_idCarrera'],
                       'Rol_idRol'=>4,
                       'Status_idStatus'=>2);
-        $this->db->insert("usuario",$usuario);
+        $this->db->insert("Usuario",$usuario);
     }
 
 }

@@ -6,7 +6,12 @@ class Item_modelo extends CI_Model {
     public function __construct(){
         parent::__construct();
         $this->load->database();
-        $this->load->model('');
+    }
+
+    public function get_num_rows($data){
+        $this->db->where('TipoItem_idTipoItem',$data);
+        $query = $this->db->get('Item');
+        return $query->num_rows();
     }
 
     public function insert_item($data){
@@ -27,5 +32,11 @@ class Item_modelo extends CI_Model {
         else{return false;}
     }
 
+    public function get_items_by_id($id){
+        $this->db->where('idItem',$id);
+        $query = $this->db->get('Item');
+        if($query->num_rows()>0){return $query;}
+        else{return false;}
+    }
 }
 ?>

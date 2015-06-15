@@ -13,8 +13,23 @@ class Galeria extends CI_Controller {
         $data['JuanitoMenu'] =$this->juanitomenu->get_menu_is_logged($data['is_logged']);
         $data['header']=$this->load->view('header',$data,true);
         $data['footer']=$this->load->view('footer','',true);
-        $data['all_videos']=$this->Item_modelo->get_items_by_type('1');
-        $this->load->view('galeria/galeria_view',$data);
+        $data['num_rows']=$this->Item_modelo->get_num_rows('1');
+        $data['segmento']=$this->uri->segment(2);
+        if(!$data['segmento']){
+            $data['all_videos']=$this->Item_modelo->get_items_by_type('1');
+            $this->load->view('galeria/galeria_view',$data);
+        }else{
+            $data['all_videos']=$this->Item_modelo->get_items_by_id($data['segmento']);
+            $this->load->view('galeria/galeria_item_view',$data);
+        }
+
     }
+
+    public function seccionar_galeria($num_rows,$div){
+        $xd['remainder']=$num_rows%$div;
+        $xd['quotient']=$num_rows/$div;
+        return $xd;
+    }
+
 }
 ?>
