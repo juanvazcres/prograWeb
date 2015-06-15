@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 15, 2015 at 01:55 AM
+-- Generation Time: Jun 15, 2015 at 11:49 AM
 -- Server version: 5.5.43-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.9
 
@@ -111,10 +111,10 @@ CREATE TABLE IF NOT EXISTS `Item` (
 --
 
 INSERT INTO `Item` (`idItem`, `titulo`, `url`, `descripcion`, `imagen`, `TipoItem_idTipoItem`) VALUES
-(1, 'CodeIgniter - Introducción', 'https://www.youtube.com/watch?v=w1Cn-CiL-E8', 'Curso intruductorio para aprender a usar el framework Codeigniter para desarrollo web.', 'http://www.cetinakat.info/wp-content/uploads/2011/10/CodeIgniter_1680x10501.jpg', 1),
-(2, ' LA HISTORIA DE LA MATEMATICAS', 'https://www.youtube.com/watch?v=lEU1TGOV4QI', 'Las matemáticas empiezan con el conteo. Sin embargo, no es razonable sugerir que el conteo de la antigüedad era matemáticas. Se puede decir que las matemáticas empiezan solamente cuando se empezó a llevar un registro de ese conteo y, por ello, se tuvo alguna representación de los números.', 'http://tantrasurbanos.com/wp-content/uploads/2013/10/Historiamaths.jpg', 1),
-(3, ' Historia prohibida de la humanidad', 'https://www.youtube.com/watch?v=xW0pY5j2xvA', 'Documental muy interesante sobre todos los hallazgos de arqueología, ingeniería y geología, ocultados por la ciencia convencional por no adecuarse al paradigma científico actual.', 'http://i.ytimg.com/vi/vLKdz0oI__Q/0.jpg', 1),
-(4, ' Documental - Historia Oculta de Saddam Husse', 'https://www.youtube.com/watch?v=kcfso0pJpYM', 'Lideres mundiales\nDictadores del mundo\nDictadores de la historia\nDerrocamiento de Saddam Hussein.\n', 'http://i3.ytimg.com/vi/kcfso0pJpYM/hqdefault.jpg', 1);
+(1, 'CodeIgniter - Introducción', '<iframe width="560" height="315" src="https://www.youtube.com/embed/w1Cn-CiL-E8" frameborder="0" allowfullscreen></iframe>', 'Curso intruductorio para aprender a usar el framework Codeigniter para desarrollo web.', 'http://www.cetinakat.info/wp-content/uploads/2011/10/CodeIgniter_1680x10501.jpg', 1),
+(2, ' LA HISTORIA DE LA MATEMATICAS', '<iframe width="560" height="315" src="https://www.youtube.com/embed/lEU1TGOV4QI" frameborder="0" allowfullscreen></iframe>', 'Las matemáticas empiezan con el conteo. Sin embargo, no es razonable sugerir que el conteo de la antigüedad era matemáticas. Se puede decir que las matemáticas empiezan solamente cuando se empezó a llevar un registro de ese conteo y, por ello, se tuvo alguna representación de los números.', 'http://tantrasurbanos.com/wp-content/uploads/2013/10/Historiamaths.jpg', 1),
+(3, ' Historia prohibida de la humanidad', '<iframe width="420" height="315" src="https://www.youtube.com/embed/xW0pY5j2xvA" frameborder="0" allowfullscreen></iframe>', 'Documental muy interesante sobre todos los hallazgos de arqueología, ingeniería y geología, ocultados por la ciencia convencional por no adecuarse al paradigma científico actual.', 'http://i.ytimg.com/vi/vLKdz0oI__Q/0.jpg', 1),
+(4, ' Documental - Historia Oculta de Saddam Husse', '<iframe width="560" height="315" src="https://www.youtube.com/embed/kcfso0pJpYM" frameborder="0" allowfullscreen></iframe>', 'Lideres mundiales\nDictadores del mundo\nDictadores de la historia\nDerrocamiento de Saddam Hussein.\n', 'http://i3.ytimg.com/vi/kcfso0pJpYM/hqdefault.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -241,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   KEY `fk_Usuario_Carrera_idx` (`Carrera_idCarrera`),
   KEY `fk_Usuario_Rol1_idx` (`Rol_idRol`),
   KEY `fk_Usuario_Status1_idx` (`Status_idStatus`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `Usuario`
@@ -249,7 +249,12 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
 
 INSERT INTO `Usuario` (`idUsuario`, `nombre`, `ap_paterno`, `ap_materno`, `email`, `telefono`, `rfc`, `pass`, `Carrera_idCarrera`, `Rol_idRol`, `Status_idStatus`) VALUES
 (1, 'Juan', 'Vazquez', 'Cres', 'juan@mail.com', '1234567890', 'VACJ930130HVZ', 'e10adc3949ba59abbe56e057f20f883e', 1, 1, 1),
-(2, 'Juanito', 'Vaz', 'Cres', 'jusnito@mandarinacorp.com', '12345612', 'ridm8611101m5', 'c4ca4238a0b923820dcc509a6f75849b', 1, 1, 2);
+(2, 'Juanito', 'Vaz', 'Cres', 'jusnito@mandarinacorp.com', '12345612', 'ridm8611101m5', 'c4ca4238a0b923820dcc509a6f75849b', 1, 1, 1),
+(3, '', '', '', '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 1, 4, 2),
+(4, '', 'ddd', '', 'dddd', '', '', 'd41d8cd98f00b204e9800998ecf8427e', 1, 4, 2),
+(5, 'Sergio', 'Mandela', 'XD', 'juan@mail.com', 'sdasd', 'dfgdsasgdhfjf', 'b3a2a605e8ab8ee4acbd40d2ee171e34', 1, 4, 2),
+(6, 'jgh', 'mn,', 'm,nj', 'hartigan93@hotmail.com', 'ss', 'HVAS654345ZSX', '202cb962ac59075b964b07152d234b70', 2, 4, 2),
+(7, 'apu', 'sei', 'ase', 'juanperez@mail.com', '1234567890', 'HCDS456789SDE', '2d288379c02c2f0390fe42aba062c30a', 1, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -264,7 +269,17 @@ CREATE TABLE IF NOT EXISTS `Visita` (
   PRIMARY KEY (`idVisita`),
   KEY `fk_Usuario_has_Item_Item1_idx` (`Item_idItem`),
   KEY `fk_Usuario_has_Item_Usuario1_idx` (`Usuario_idUsuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `Visita`
+--
+
+INSERT INTO `Visita` (`idVisita`, `Usuario_idUsuario`, `Item_idItem`) VALUES
+(1, 2, 1),
+(2, 1, 4),
+(3, 1, 1),
+(4, 2, 4);
 
 --
 -- Constraints for dumped tables
@@ -274,9 +289,9 @@ CREATE TABLE IF NOT EXISTS `Visita` (
 -- Constraints for table `Evento`
 --
 ALTER TABLE `Evento`
-  ADD CONSTRAINT `fk_Evento_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `Usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Evento_Materia1` FOREIGN KEY (`Materia_idMateria`) REFERENCES `Materia` (`idMateria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Evento_Sala1` FOREIGN KEY (`Sala_idSala`) REFERENCES `Sala` (`idSala`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Evento_Materia1` FOREIGN KEY (`Materia_idMateria`) REFERENCES `Materia` (`idMateria`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Evento_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `Usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `Item`
@@ -296,8 +311,8 @@ ALTER TABLE `Usuario`
 -- Constraints for table `Visita`
 --
 ALTER TABLE `Visita`
-  ADD CONSTRAINT `fk_Usuario_has_Item_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `Usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Usuario_has_Item_Item1` FOREIGN KEY (`Item_idItem`) REFERENCES `Item` (`idItem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Usuario_has_Item_Item1` FOREIGN KEY (`Item_idItem`) REFERENCES `Item` (`idItem`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Usuario_has_Item_Usuario1` FOREIGN KEY (`Usuario_idUsuario`) REFERENCES `Usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

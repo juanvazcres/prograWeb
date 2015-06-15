@@ -13,8 +13,8 @@ class Login_modelo extends CI_Model{
 	{
         $this -> db -> select('idUsuario, rfc, pass, Rol_idRol, Status_idStatus');
         $this -> db -> from('Usuario');
-        $this -> db -> where('rfc', $rfc);
-        $this -> db -> where('pass', $pass);
+        $this -> db -> where('rfc', "'".$rfc."'");
+        $this -> db -> where('pass', "'".$pass."'");
         $this -> db -> limit(1);
 		$query = $this->db->get();
 		if($query->num_rows() == 1)
