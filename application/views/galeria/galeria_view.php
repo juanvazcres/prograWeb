@@ -3,7 +3,6 @@
     <div class="container">
       <div class="inside">
         <div class="wrapper">
-
             <!--seccion de galería-->
             <div class="row">
                 <div class="col-md-3">

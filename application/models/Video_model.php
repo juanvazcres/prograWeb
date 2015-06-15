@@ -8,7 +8,7 @@ class Video_model extends CI_Model{
     }
     
     public function insert_video($data){
-        $this->db->insert("videos",array('idVideos'=>$data['idVideos'],'nombre'=>$data['nombre'],'url'=>$data['url'],'urlImagen'=>$data['urlImagen'],'descripcion'=>$data['descripcion']));
+        $this->db->insert("videos",array('idVideos'=>$data['idVideos'],'titulo'=>$data['nombre'],'url'=>$data['url'],'imagen'=>$data['urlImagen'],'descripcion'=>$data['descripcion']));
     }
     
     public function get_videos(){
