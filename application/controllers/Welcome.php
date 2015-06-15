@@ -24,6 +24,8 @@ class Welcome extends CI_Controller {
         $this->load->helper("form");
         $this->load->model('Video_model');
         $this->load->model("Evento_modelo");
+        $this->load->library("JuanitoMenu");
+        
     }
     
 	public function index()
@@ -35,6 +37,9 @@ class Welcome extends CI_Controller {
         
         $data['session_rfc']=$this->session->userdata('rfc');
         $data['is_logged']=$this->session->userdata('is_logged');
+        
+        
+        $data['JuanitoMenu'] =$this->juanitomenu->get_menu_is_logged($data['is_logged']);
         
         //echo $data['session_rfc'];
         $this->load->view('header',$data);

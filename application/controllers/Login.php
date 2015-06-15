@@ -7,14 +7,22 @@ class Login extends CI_Controller {
         $this->load->library(array('session','form_validation'));
 		$this->load->helper(array('url','form'));
         $this->load->model("login_modelo");
+        $this->load->library("JuanitoMenu");
     }
 
     public function index(){
-        $data['header']=$this->load->view('header','',true);
+        $data['is_logged']=$this->session->userdata('is_logged');
+        $data['JuanitoMenu'] =$this->juanitomenu->get_menu_is_logged($data['is_logged']);
+        $data['header']=$this->load->view('header',$data,true);
         $data['footer']=$this->load->view('footer','',true);
         
         $this->load->view('view_login',$data);
     }
+       
+         
+    
+    
+    
     
     function processLogin(){
         $data = array(
@@ -35,16 +43,13 @@ class Login extends CI_Controller {
             
             switch($session_data['Status']){
                 case '1':
-                    
+                    redirect(base_url(),'refresh');
                     break;
                 case '2':
                     redirect(base_url(),'refresh');
                     break;
                 case '3':
-                    
-                    break;
-                case '4':
-                    
+                    redirect(base_url(),'refresh');
                     break;
             }            
         }else{
