@@ -23,7 +23,7 @@
             });
             $('#datetimepicker12').on("dp.change",function(e){
              var fecha= $('#datetimepicker12').data('DateTimePicker').date();
-                var fecha_uri=(fecha.year()+"-"+fecha.month()+"-"+fecha.date());
+                var fecha_uri=(fecha.year()+"-"+(fecha.month()+1)+"-"+fecha.date());
                 window.location = "<?php echo base_url().'index.php/Eventos/byDate/' ?>" + fecha_uri;
                 
             });
