@@ -14,45 +14,57 @@ echo form_open('login/solicitudRegistro',$attributes); ?>
         $nombre = array(
             'name'=>'nombre',
             'class'=>'form-control',
-            'placeholder' => 'Escribe tu nombre'
+            'placeholder' => 'Escribe tu nombre',
+            'required' => true
         );
         $apellido_paterno = array(
             'name'=>'apellido_paterno',
             'class'=>'form-control',
-            'placeholder' => 'Escribe tu apellido paterno:'
+            'placeholder' => 'Escribe tu apellido paterno:',
+            'required' => true
         );
 $apellido_materno = array(
             'name'=>'apellido_materno',
             'class'=>'form-control',
-            'placeholder' => 'Escribe tu apellido materno:'
+            'placeholder' => 'Escribe tu apellido materno:',
+            'required' => true
         );
 $email = array(
+            'type'=>'email',
             'name'=>'email',
             'class'=>'form-control',
-            'placeholder' => 'Escribe tu E-mail:'
+            'placeholder' => 'Escribe tu E-mail:',
+            'required' => true
         );
 
 $telefono =array(
+            'type'=>'text',
             'name'=>'telefono',
             'class'=>'form-control',
-            'placeholder' => 'Escribe tu teléfono:'
+            'placeholder' => 'Escribe tu teléfono:',
+            'pattern'=>'[0-9]*',
+            'required' => true
         );
 $rfc=array(
+            'type'=>'text',
             'name'=>'rfc',
-    'class'=>'form-control',
-            'placeholder' => 'Escribe tu RFC:'
+            'class'=>'form-control',
+            'placeholder' => 'Escribe tu RFC:',
+            'pattern'=>'[A-Za-z]{3,4}[0-9]{6}[0-9a-zA-z]{3}',
+            'required' => true
         );
 
 $pass=array(
             'name'=>'password',
-    'class'=>'form-control',
-            'placeholder' => 'Escribe tu Password:'
+            'class'=>'form-control',
+            'placeholder' => 'Escribe tu Password:',
+            'required' => true
         );
 
 
 $bumit= array(
             'name'=>'submit',
-    'class'=>'btn btn-default',
+            'class'=>'btn btn-default',
         );
 
     $options=array();
