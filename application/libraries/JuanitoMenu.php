@@ -15,24 +15,22 @@ class JuanitoMenu{
     }
     
     public function  get_menu_is_logged($is_logged){
+//"Logout" =>base_url().'index.php/login/logout',
+//"Login" =>base_url().'index.php/login',
+        $menu_arr=array(
+                        "Inicio" => base_url(),
+                        "Galeria" => base_url()."index.php/Galeria",
+                        "Ayuda" => "#",
+                        "Acerca de" => '#'
+                        );
         if($is_logged){
-        $menu_arr=array(
-        "Inicio" => base_url(),
-                        "Galeria" => "#",
-                        "Logout" =>base_url().'index.php/login/logout',
-                        "Ayuda" => "#",
-                        "Acerca de" => '#'
-                        );
+            $array_login=array("Logout" =>base_url().'index.php/login/logout');         
         }else{
-        $menu_arr=array(
-                    "Inicio" => base_url(),
-                        "Galeria" => "#",
-                        "Login" =>base_url().'index.php/login',
-                        "Ayuda" => "#",
-                        "Acerca de" => '#'
-                        );
-    }
-        return $this->construir_menu($menu_arr);
+            $array_login=array("Login" =>base_url().'index.php/login');         
+        }
+        
+        
+        return $this->construir_menu(array_merge($menu_arr,$array_login));
     }
     
 
