@@ -3,9 +3,13 @@
     <div class="container">
       <div class="inside">
         <div class="wrapper">
+
+
             <!--seccion de galería-->
             <div class="row">
-                <div class="col-md-3">
+                <?php
+                    foreach($->result() as $video):?>
+                   <div class="col-md-3">
                     <a href="#" class="thumbnail">
                     <img src="<?php echo base_url()?>/images/thumb1.jpg" alt="...">
                     </a>
@@ -22,6 +26,8 @@
                 </div>
             </div>
             <!--seccion de galería-->
+
+
             <!--seccion de paginado-->
             <div class="row">
                 <div class="col-md-12">

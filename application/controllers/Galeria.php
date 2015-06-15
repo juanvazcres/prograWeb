@@ -11,10 +11,8 @@ class Galeria extends CI_Controller {
     public function index(){
         $data['header']=$this->load->view('header','',true);
         $data['footer']=$this->load->view('footer','',true);
-        $data['all_videos']=$this->ite
+        $data['all_videos']=$this->Item_modelo->get_items_by_type('1');
         $this->load->view('galeria/galeria_view',$data);
-
     }
-
 }
 ?>
