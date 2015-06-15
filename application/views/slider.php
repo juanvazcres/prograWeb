@@ -6,7 +6,7 @@
 
             foreach($top_five_videos->result() as $video): ?>
       	
-            <li><img src="<?php echo $video->imagen ?>" alt=""></li>
+            <li><a href="<?php echo base_url()."index.php/Galeria/index/".$video->idItem ; ?>"><img src="<?php echo $video->imagen ?>" alt=""></a></li>
             <?php endforeach; ?>
             
       </ul>

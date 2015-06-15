@@ -9,12 +9,12 @@
                 foreach($all_videos->result() as $video):?>
             <div class="row">
                 <div class="col-md-3">
-                    <a href="<?php //echo $video->idItem?>" class="thumbnail">
+                    <a href="<?php echo "Galeria/index/".$video->idItem ?>" class="thumbnail">
                     <img src="<?php echo $video->imagen?>" alt="...">
                     </a>
                 </div>
                 <div class="col-md-9">
-                    <a href="<?php //echo $video->idItem?>" class="thumbnail">
+                    <a href="<?php echo "Galeria/index/".$video->idItem?>" class="thumbnail">
                     <h2>
                         <?php echo $video->titulo?>
                     </h2>
