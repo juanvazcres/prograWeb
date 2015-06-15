@@ -12,21 +12,23 @@ class Video_model extends CI_Model{
     }
     
     public function get_videos(){
-        $query = $this->db->get('videos');
+        $query = $this->db->get('Item');
         if($query->num_rows()>0){return $query;}
         else{return false;}
     }
     
     public function get_videos_by_ID($id){
-        $this->db->where('idVideos',$id);
-        $query = $this->db->get('videos');
+        $this->db->where('idItem',$id);
+        $this->db->where('TipoItem_idTipoItem','1');
+        $query = $this->db->get('Item');
         if($query->num_rows()>0){return $query;}
         else{return false;}
     }
     
     public function get_top_five_videos(){
-        $this->db->order_by('idVideos','desc');
-        $query = $this->db->get('videos',5);
+        $this->db->order_by('idItem','desc');
+        $this->db->where('TipoItem_idTipoItem','1');
+        $query = $this->db->get('Item',5);
         if($query->num_rows()>0){return $query;}
         else{return false;}
     }
