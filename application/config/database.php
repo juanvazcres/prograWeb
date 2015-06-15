@@ -66,7 +66,7 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '123456',
+	'password' => '',
 	'database' => 'mediateca',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -83,3 +83,4 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+$db['default']['_protect_identifiers']= FALSE; 

@@ -20,7 +20,7 @@ class JuanitoMenu{
         $menu_arr=array(
                         "Inicio" => base_url(),
                         "Galeria" => base_url()."index.php/Galeria",
-                        "Ayuda" => "#",
+                        "Eventos" => base_url()."index.php/Eventos",
                         "Acerca de" => '#'
                         );
         if($is_logged){
